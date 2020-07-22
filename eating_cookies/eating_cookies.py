@@ -10,14 +10,16 @@ def eating_cookies(n):
     def eat(total, to_eat):
         nonlocal number_of_ways
         total -= to_eat
-        if total == 0:
-            number_of_ways += 1
-        elif total < 0:
+        if total < 0:
             return
+        elif total == 0:
+            number_of_ways += 1
         else:
             eat(total, 1)
-            eat(total, 2)
-            eat(total, 3)
+            if total >= 2:
+                eat(total, 2)
+            if total >=3:
+                eat(total, 3)
 
     if n <= 1:
         return 1
@@ -32,7 +34,7 @@ def eating_cookies(n):
 
 if __name__ == "__main__":
     # Use the main function here to test out your implementation
-    num_cookies = 2
+    num_cookies = 5
 
     print(
         f"There are {eating_cookies(num_cookies)} ways for Cookie Monster to each {num_cookies} cookies")
