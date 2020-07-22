@@ -18,15 +18,13 @@ def eating_cookies(n):
             eat(total, 1)
             if total >= 2:
                 eat(total, 2)
-            if total >=3:
+            if total >= 3:
                 eat(total, 3)
 
     if n <= 1:
         return 1
     else:
-        eat(n, 1)
-        eat(n, 2)
-        eat(n, 3)
+        eat(n, 0)
         return number_of_ways
 
     pass
