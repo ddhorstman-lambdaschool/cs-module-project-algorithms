@@ -3,10 +3,10 @@ Input: a List of integers
 Returns: a List of integers
 '''
 def moving_zeroes(arr):
-    # Your code here
-
-    pass
-
+    for idx, number in enumerate(arr):
+        if number != 0:
+            arr.insert(0,arr.pop(idx))
+    return arr
 
 if __name__ == '__main__':
     # Use the main function here to test out your implementation
